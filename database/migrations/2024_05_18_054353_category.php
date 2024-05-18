@@ -9,14 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    protected $table = 'roles';
+    protected $table='category';
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->integer('id_roles',true,false)->nullable(false);
-            $table->string('name', 100);
-            $table->timestamps();
-        });
+        //
+        Schema::create('category', function (Blueprint $table) {
+            $table->integer('id_category',true,false)->nullable(false);
+            $table->string('nama',60)->nullable(false);
+        });;
     }
 
     /**
@@ -24,6 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        //
+        Schema::dropIfExists('category');
     }
 };

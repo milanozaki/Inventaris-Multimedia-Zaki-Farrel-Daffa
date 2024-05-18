@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer('id_peminjaman',true,false)->nullable(false);
             $table->integer('id_users',false,false)->index('idUserPeminjaman')->nullable(false);
             $table->integer('id_alat',false,false)->index('idAlatPeminjaman')->nullable(false);
-            $table->dateTime('tanggal_peminjaman')->nullable(true);
-            $table->dateTime('tanggal_pengembalian')->nullable(true);
+            $table->date('tanggal_peminjaman')->nullable(true)->default('2024-01-01');
+            $table->date('tanggal_pengembalian')->nullable(false);
             $table->integer('jumlah_alat')->nullable(false);
             $table->timestamps();
 
